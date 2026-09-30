@@ -3,77 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NatArt - Portfólio de Arte Visual</title>
-    <link rel="icon" type="image/x-icon" href="natart.ico">
+    <title>NatArt | Ilustração & Arte Digital</title>
+
+    <!-- Biblioteca de Ícones (Font Awesome CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Link para a folha de estilos na pasta css/ -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- Cabeçalho -->
-    <header class="header">
+    <!-- CABEÇALHO & NAVEGAÇÃO -->
+    <header class="header-principal">
         <div class="logo-container">
-            <div class="logo-header">
-                <img src="natart.ico" alt="Ícone NatArt" class="logo-img">
-                <span class="logo-text">NatArt</span>
-            </div>
-            <span class="logo-subtitle">Artista | Visual Art</span>
+            <a href="index.html" class="logo">
+                <img src="png/natart.ico" alt="Logo NatArt" class="logo-img">
+                <span>NatArt</span>
+            </a>
+            <span class="logo-subtitle">Ilustração & Arte Digital</span>
         </div>
 
-        <nav class="nav-menu">
-            <a href="index.html" class="active">Principal</a>
-            <a href="galeria.html">Galeria</a>
-            <a href="sobre.html">Sobre</a>
-            <a href="contato.html">Contato</a>
+        <nav class="menu-navegacao">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
         </nav>
     </header>
 
-    <!-- Conteúdo Principal -->
-    <main class="section">
-        
-        <!-- Banner de Apresentação -->
-        <section class="hero">
-            <h1>Ilustrações, Afeto e Arte Visual</h1>
-            <p>Seja bem-vindo ao portfólio oficial. Explore minhas criações em nankin, técnica mista e arte digital.</p>
-            <a href="galeria.html" class="btn-hero">Ver Galeria Completa</a>
-        </section>
-
-        <!-- Seção de Destaques -->
-        <section class="destaques">
-            <h2>Obras em Destaque</h2>
-            <div class="grid-galeria">
-                
-                <figure class="card-arte">
-                    <img src="img/maeart.jpeg" alt="Maternidade e Afeto" onerror="this.src='https://via.placeholder.com/400x500?text=Arte+1'">
-                    <figcaption>
-                        <strong>Maternidade e Afeto</strong> — Nankin sobre papel
-                    </figcaption>
-                </figure>
-
-                <figure class="card-arte">
-                    <img src="img/kiss.jpg" alt="KISS - Arena da Amazônia" onerror="this.src='https://via.placeholder.com/400x500?text=Arte+2'">
-                    <figcaption>
-                        <strong>KISS — Arena da Amazônia</strong> — Cartaz Ilustrado
-                    </figcaption>
-                </figure>
-
+    <!-- CONTEÚDO PRINCIPAL (HERO) -->
+    <main>
+        <section class="hero-principal">
+            <div class="hero-texto">
+                <h1>Ilustrações que contam histórias</h1>
+                <p>Arte digital feita com sensibilidade, carinho e identidade única.</p>
+                <a href="galeria.html" class="btn-cta">Conheça o Portfólio</a>
+            </div>
+            <div class="hero-imagem">
+                <img src="png/arte3.png" alt="Retrato da Nat" class="img-hero">
             </div>
         </section>
 
+        <!-- DESTAQUES DA GALERIA -->
+        <section class="destaques-secao">
+            <h2>Destaques</h2>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="assets/destaque1.jpg" alt="Ilustração Destaque 1">
+                </div>
+                <div class="grid-item">
+                    <img src="assets/destaque2.jpg" alt="Ilustração Destaque 2">
+                </div>
+                <div class="grid-item">
+                    <img src="assets/destaque3.jpg" alt="Ilustração Destaque 3">
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- Rodapé -->
-    <footer class="footer">
-		<div class="instagram-container">
-			<a href="https://www.instagram.com/naty.artee" target="_blank" rel="noopener noreferrer" class="instagram-link">
-			<!-- Ícone do Instagram em SVG Padrão Otimizado -->
-				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="insta-icon">
-					<rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-					<circle cx="12" cy="12" r="4"></circle>
-					<line x1="17.5" y1="6.5" x2="17.51" y2="6.5"> </line>
-				</svg>
-				<span>Siga no Instagram: <strong>@naty.artee</strong></span>
-			</a>
-		</div>
+    <!-- RODAPÉ & INSTAGRAM -->
+    <footer class="footer-principal">
+        <a href="https://www.instagram.com/naty.artee" target="_blank" rel="noopener noreferrer" class="btn-instagram">
+            <i class="fa-brands fa-instagram"></i>
+            Siga no Instagram: @naty.artee
+        </a>
         <p>&copy; 2026 NatArt. Todos os direitos reservados.</p>
     </footer>
 
