@@ -1,0 +1,613 @@
+/* ==========================================
+   1. RESET & PALETA IDENTIDADE NATART
+   ========================================== */
+
+html {
+    font-size: 16px;
+    overflow-y: scroll;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #2b2226;
+    background-color: #fdf8f9; /* Fundo off-white levemente rosado */
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+img,
+picture,
+video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* ==========================================
+   2. CABEÇALHO
+   ========================================== */
+
+.header {
+    width: 100%;
+    min-height: 65px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 8px 25px;
+
+    background-color: #ffffff;
+    color: #2b2226;
+
+    border-bottom: 2px solid #f2e3e7; /* Borda rosada delicada */
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+/* ==========================================
+   3. LOGO
+   ========================================== */
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-shrink: 0;
+}
+
+.logo-header {
+    display: flex;
+    align-items: center;
+    height: 38px;
+    gap: 8px;
+}
+
+.logo-img {
+    width: 35px;
+    height: 35px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.logo-text {
+    font-family: 'Times New Roman', serif;
+    font-size: 20px;
+    line-height: 1;
+    font-weight: bold;
+    color: #8f4058; /* Rosa escuro elegante */
+    white-space: nowrap;
+}
+
+.logo-subtitle {
+    display: block;
+    margin-top: 1px;
+    font-size: 13px;
+    line-height: 1;
+    color: #b58090;
+    white-space: nowrap;
+}
+
+
+/* ==========================================
+   4. MENU DE NAVEGAÇÃO
+   ========================================== */
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-menu a {
+    font-size: 16px;
+    font-weight: bold;
+    color: #52313d;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    font-style: italic;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: #c86b85;
+    background-color: #fceef2;
+}
+
+
+/* ==========================================
+   5. SEÇÃO SOBRE (FOTO & TEXTO ANIMADO)
+   ========================================== */
+
+.sobre-container {
+    display: flex;
+    flex-direction: row;        /* Lado a lado */
+    align-items: center;        /* Alinhamento vertical centralizado */
+    justify-content: center;
+    gap: 40px;                  /* Espaço entre a imagem e o texto */
+    max-width: 900px;           /* Largura contida e elegante */
+    margin: 30px auto;          /* Margem superior/inferior limpa */
+    padding: 0 20px;
+}
+
+.sobre-foto {
+    flex: 0 0 280px;            /* Diminui e fixa a largura da foto em 280px */
+    max-width: 280px;
+    position: relative;
+    z-index: 2;                 /* Garante que a foto fique na frente durante a animação */
+}
+
+.sobre-foto img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid #f2e3e7;
+    box-shadow: 0 8px 20px rgba(143, 64, 88, 0.12);
+    object-fit: cover;
+}
+
+.sobre-texto {
+    flex: 1;                    /* Ocupa o restante do espaço à direita */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    position: relative;
+    z-index: 1;                 /* Fica atrás da foto no início */
+    animation: surgirDeTras 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.sobre-texto h2 {
+    font-size: 2rem;
+    color: #8f4058;
+    margin-bottom: 15px;
+    font-family: 'Times New Roman', serif;
+}
+
+.sobre-texto p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #52313d;
+}
+
+/* Animação: Texto surgindo de trás da foto */
+@keyframes surgirDeTras {
+    0% {
+        opacity: 0;
+        transform: translateX(-80px) scale(0.95); /* Começa recuado atrás da foto */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1); /* Posição final perfeita */
+    }
+}
+
+
+/* ==========================================
+   6. CONTEÚDO E GRADE DA GALERIA
+   ========================================== */
+
+.section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.section h2 {
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', serif;
+    color: #8f4058;
+}
+
+.grid-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card-arte img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #f2e3e7;
+}
+
+.card-arte p {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #6d525c;
+}
+
+
+/* ==========================================
+   7. CARROSSEL PREMIUM (IDENTIDADE NATART)
+   ========================================== */
+
+.galeria-section {
+    width: 100%;
+    max-width: 950px;
+    margin: 10px auto 30px auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.galeria-section h2 {
+    font-size: 2.2rem;
+    color: #8f4058;
+    margin-bottom: 20px;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 16px;
+    background: linear-gradient(145deg, #fbf2f4, #ffffff);
+    box-shadow: 0 10px 30px rgba(143, 64, 88, 0.08);
+    border: 1px solid #f2dbe1;
+    transition: box-shadow 0.3s ease;
+}
+
+.carousel-container:hover {
+    box-shadow: 0 15px 40px rgba(143, 64, 88, 0.15);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+    width: 100%;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 25px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-slide img {
+    max-width: 100%;
+    max-height: 560px;
+    object-fit: contain;
+    border-radius: 10px;
+    filter: drop-shadow(0 6px 14px rgba(143, 64, 88, 0.12));
+}
+
+.slide-caption {
+    margin-top: 18px;
+    padding: 10px 15px;
+}
+
+.slide-caption h3 {
+    margin: 0 0 4px 0;
+    font-family: 'Times New Roman', serif;
+    font-size: 1.5rem;
+    color: #52313d;
+    font-weight: 700;
+}
+
+.slide-caption p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #8f6875;
+    font-style: italic;
+}
+
+/* Setas em Tom Rosado em Vidro Fosco */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.85);
+    color: #8f4058;
+    border: 1px solid #f2dbe1;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 12px rgba(143, 64, 88, 0.1);
+    transition: all 0.25s ease;
+}
+
+.carousel-btn:hover {
+    background: #8f4058;
+    color: #ffffff;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn.prev { left: 15px; }
+.carousel-btn.next { right: 15px; }
+
+/* Indicadores de Posição (Pills) */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 20px;
+    background-color: #ebccd4;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dot.active {
+    width: 28px;
+    background-color: #8f4058;
+}
+
+
+
+/* ==========================================
+   SEÇÃO 8 - CONTATO
+   ========================================== */
+
+.hero {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #fcf0f3;
+    border-radius: 12px;
+    border: 1px solid #f4e1e6;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-size: 2rem;
+    color: #8f4058;
+    margin-bottom: 15px;
+}
+
+.btn-hero {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: #8f4058;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-hero:hover {
+    background-color: #c86b85;
+}
+
+/* Estrutura da Página de Contato */
+.contato-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Centraliza verticalmente a imagem com o formulário */
+    justify-content: space-between;
+    gap: 50px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* Lado Esquerdo: Formulário com Caixas Maiores */
+.form-contato {
+    flex: 1.2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campo label {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #8f4058;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+    padding: 16px 18px;
+    font-size: 1.05rem;
+    color: #2b2226;
+    background-color: #ffffff;
+    border: 1.5px solid #f2dbe1;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 6px rgba(143, 64, 88, 0.04);
+}
+
+.campo textarea {
+    min-height: 160px;
+    resize: vertical;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    border-color: #8f4058;
+    box-shadow: 0 0 0 4px rgba(143, 64, 88, 0.12);
+}
+
+.btn-enviar {
+    padding: 16px 32px;
+    background-color: #8f4058;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+}
+
+.btn-enviar:hover {
+    background-color: #c86b85;
+    transform: translateY(-2px);
+}
+
+/* Lado Direito: Exibição da Imagem PNG sem fundo */
+.contato-info {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent; /* Remove qualquer fundo de caixa */
+    box-shadow: none; /* Remove a sombra da caixa */
+    border: none;
+}
+
+.img-contato {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    background: transparent;
+}
+
+
+/* ==========================================
+   9. INSTAGRAM & RODAPÉ
+   ========================================== */
+
+.instagram-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.instagram-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #e1306c;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 8px 16px;
+    background-color: #fceef2;
+    border-radius: 20px;
+    transition: background-color 0.2s ease;
+}
+
+.instagram-link:hover {
+    background-color: #f8dde5;
+}
+
+.insta-icon {
+    width: 22px;
+    height: 22px;
+    stroke: #e1306c;
+}
+
+.footer {
+    width: 100%;
+    margin-top: auto;
+    padding: 30px 20px;
+    text-align: center;
+    background-color: #3b232c;
+    color: #ffffff;
+}
+
+.footer p {
+    margin: 5px 0;
+    font-size: 0.85rem;
+    color: #e8d7dd;
+}
+
+
+/* ==========================================
+   10. RESPONSIVIDADE (DISPOSITIVOS MÓVEIS)
+   ========================================== */
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 8px;
+        padding: 8px 15px;
+    }
+
+    .logo-subtitle {
+        display: none;
+    }
+
+    .nav-menu {
+        gap: 12px;
+    }
+
+    .nav-menu a {
+        font-size: 14px;
+    }
+
+    .sobre-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .sobre-foto {
+        max-width: 220px;
+    }
+
+    .sobre-texto {
+        align-items: center;
+        text-align: center;
+    }
+
+    .carousel-slide img {
+        max-height: 400px;
+    }
+
+    .carousel-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
+
+    .contato-container {
+        flex-direction: column;
+        gap: 35px;
+    }
+}
