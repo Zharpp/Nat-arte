@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NatArt - Galeria de Obras</title>
+    <link rel="icon" type="image/x-icon" href="natart.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="logo-container">
+            <div class="logo-header">
+                <img src="natart.ico" alt="Ícone NatArt" class="logo-img">
+                <span class="logo-text">NatArt</span>
+            </div>
+            <span class="logo-subtitle">Artista | Visual Art</span>
+        </div>
+
+        <nav class="nav-menu">
+            <a href="index.html">Principal</a>
+            <a href="galeria.html" class="active">Galeria</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+    </header>
+<main class="galeria-section">
+    <h2>Galeria de Obras</h2>
+    <!-- ESTRUTURA DO CARROSSEL PARA O JAVASCRIPT -->
+			<div class="carousel-container" id="carousel">
+				<button class="carousel-btn prev" id="btnPrev">&#10094;</button>
+				<div class="carousel-track" id="carouselTrack">
+				
+            <!-- O galeria.js vai inserir as fotos automaticamente aqui! -->
+				</div>
+				<button class="carousel-btn next" id="btnNext">&#10095;</button>
+			</div>
+
+    <!-- PONTOS INDICADORES -->
+    <div class="carousel-dots" id="carouselDots"></div>
+</main>
+    <!-- Rodapé -->
+    <footer class="footer">
+		<div class="instagram-container">
+			<a href="https://www.instagram.com/naty.artee" target="_blank" rel="noopener noreferrer" class="instagram-link">
+			<!-- Ícone do Instagram em SVG Padrão Otimizado -->
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="insta-icon">
+					<rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+					<circle cx="12" cy="12" r="4"></circle>
+					<line x1="17.5" y1="6.5" x2="17.51" y2="6.5"> </line>
+				</svg>
+				
+				<span>Siga no Instagram: <strong>@naty.artee</strong></span>
+			</a>
+		</div>
+		
+        <p>&copy; 2026 NatArt. Todos os direitos reservados.</p>
+    </footer>
+	<script src="galeria.js"></script>
+</body>
+</html>
