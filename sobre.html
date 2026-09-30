@@ -3,67 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre - NatArt</title>
-    <link rel="icon" type="image/x-icon" href="natart.ico">
+    <title>Sobre | NatArt</title>
+
+    <!-- Biblioteca de Ícones (Font Awesome CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Link para a folha de estilos na pasta css/ -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- Cabeçalho -->
-    <header class="header">
+    <!-- CABEÇALHO & NAVEGAÇÃO -->
+    <header class="header-principal">
         <div class="logo-container">
-            <div class="logo-header">
-                <img src="natart.ico" alt="Ícone NatArt" class="logo-img">
-                <span class="logo-text">NatArt</span>
-            </div>
-            <span class="logo-subtitle">Artista | Visual Art</span>
+            <a href="index.html" class="logo">
+                <img src="png/natart.ico" alt="Logo NatArt" class="logo-img">
+                <span>NatArt</span>
+            </a>
+            <span class="logo-subtitle">Ilustração & Arte Digital</span>
         </div>
 
-        <nav class="nav-menu">
-            <a href="index.html">Principal</a>
-            <a href="galeria.html">Galeria</a>
-            <a href="sobre.html" class="active">Sobre</a>
-            <a href="contato.html">Contato</a>
+        <nav class="menu-navegacao">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html" class="active">Sobre</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
         </nav>
     </header>
 
-    <!-- Conteúdo Principal -->
-    <main class="section">
-        <div class="sobre-container">
-            
-            <!-- Foto da Artista (Lado Esquerdo, Diminuída) -->
+    <!-- CONTEÚDO PRINCIPAL (SOBRE) -->
+    <main>
+        <section class="sobre-container">
             <div class="sobre-foto">
-                <img src="img/cunhada.png" alt="Foto da artista Natália Valadão">
+                <img src="img/cunhada.png" alt="Retrato da artista Nat">
             </div>
-
-            <!-- Texto de Apresentação (Lado Direito) -->
             <div class="sobre-texto">
-                <h2>Sobre Mim</h2>
-                <p>
-                    Natália Valadão é estudante de Artes Visuais. 
-                    Sua produção artística tem como ponto de partida o desenho e investiga temas relacionados à maternidade, à infância, 
-                    à memória e aos afetos. Em sua pesquisa, busca compreender como as experiências pessoais podem ser transformadas em narrativas visuais, 
-                    estabelecendo diálogos entre o íntimo e o coletivo.
-                </p>
+                <h2>Sobre a Artista</h2>
+                <p>Olá! Sou a Nat, ilustradora apaixonada por dar vida a ideias, sentimentos e histórias através do desenho digital. Meu trabalho é focado em traços delicados, paletas acolhedoras e composições que transmitem afeto e personalidade em cada detalhe.</p>
             </div>
-
-        </div>
+        </section>
     </main>
 
-    <!-- Rodapé -->
-    <footer class="footer">
-        <div class="instagram-container">
-            <a href="https://www.instagram.com/naty.artee" target="_blank" rel="noopener noreferrer" class="instagram-link">
-                <!-- Ícone do Instagram em SVG -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="insta-icon">
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                    <circle cx="12" cy="12" r="4"></circle>
-                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                </svg>
-                <span>Siga no Instagram: <strong>@naty.artee</strong></span>
-            </a>
-        </div>
-
+    <!-- RODAPÉ & INSTAGRAM -->
+    <footer class="footer-principal">
+        <a href="https://www.instagram.com/naty.artee" target="_blank" rel="noopener noreferrer" class="btn-instagram">
+            <i class="fa-brands fa-instagram"></i>
+            Siga no Instagram: @naty.artee
+        </a>
         <p>&copy; 2026 NatArt. Todos os direitos reservados.</p>
     </footer>
 
