@@ -33,33 +33,128 @@ video {
 
 
 /* ==========================================
-   2. CABEÇALHO
+   2. HOMEPAGE - HERO & DESTAQUES
    ========================================== */
 
-.header {
-    width: 100%;
-    min-height: 65px;
-
+/* Apresentação Principal (Hero Section) */
+.hero-principal {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    gap: 40px;
+    width: 100%;
+}
 
-    padding: 8px 25px;
+.hero-texto {
+    flex: 1;
+}
 
-    background-color: #ffffff;
-    color: #2b2226;
+.hero-texto h1 {
+    font-size: 2.5rem;
+    color: #8f4058; /* Tom vinho/rosa da marca */
+    margin-bottom: 15px;
+}
 
-    border-bottom: 2px solid #f2e3e7; /* Borda rosada delicada */
+.hero-texto p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    color: #55444c;
+}
 
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+/* Retrato Principal da Nat */
+.hero-imagem {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-imagem .img-hero {
+    max-width: 280px;
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(143, 64, 88, 0.12);
+    display: block;
+    margin: 0 auto;
+}
+
+/* Botão de Ação na Homepage */
+.btn-cta {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: #8f4058;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-cta:hover {
+    background-color: #703043;
+    transform: translateY(-2px);
+}
+
+/* Área para as 3 fotos em destaque */
+.destaques-secao {
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+
+.destaques-secao h2 {
+    color: #8f4058;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    font-family: 'Times New Roman', serif;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.grid-item img:hover {
+    transform: translateY(-5px);
 }
 
 
 /* ==========================================
-   3. LOGO
+   3. CABEÇALHO & LOGO
    ========================================== */
+
+.header,
+.header-principal {
+    width: 100%;
+    min-height: 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 25px;
+    background-color: #ffffff;
+    color: #2b2226;
+    border-bottom: 2px solid #f2e3e7;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
 .logo-container {
     display: flex;
@@ -68,11 +163,16 @@ video {
     flex-shrink: 0;
 }
 
-.logo-header {
+.logo-header,
+.logo {
     display: flex;
     align-items: center;
-    height: 38px;
     gap: 8px;
+    text-decoration: none;
+    font-family: 'Times New Roman', serif;
+    font-size: 22px;
+    font-weight: bold;
+    color: #8f4058;
 }
 
 .logo-img {
@@ -81,15 +181,6 @@ video {
     flex-shrink: 0;
     border-radius: 50%;
     object-fit: cover;
-}
-
-.logo-text {
-    font-family: 'Times New Roman', serif;
-    font-size: 20px;
-    line-height: 1;
-    font-weight: bold;
-    color: #8f4058; /* Rosa escuro elegante */
-    white-space: nowrap;
 }
 
 .logo-subtitle {
@@ -106,13 +197,18 @@ video {
    4. MENU DE NAVEGAÇÃO
    ========================================== */
 
-.nav-menu {
+.nav-menu,
+.menu-navegacao ul {
     display: flex;
     align-items: center;
+    list-style: none;
     gap: 25px;
+    margin: 0;
+    padding: 0;
 }
 
-.nav-menu a {
+.nav-menu a,
+.menu-navegacao a {
     font-size: 16px;
     font-weight: bold;
     color: #52313d;
@@ -120,12 +216,14 @@ video {
     white-space: nowrap;
     transition: all 0.3s ease;
     font-style: italic;
-    padding: 4px 8px;
-    border-radius: 4px;
+    padding: 6px 12px;
+    border-radius: 6px;
 }
 
 .nav-menu a:hover,
-.nav-menu a.active {
+.nav-menu a.active,
+.menu-navegacao a:hover,
+.menu-navegacao a.active {
     color: #c86b85;
     background-color: #fceef2;
 }
@@ -137,20 +235,20 @@ video {
 
 .sobre-container {
     display: flex;
-    flex-direction: row;        /* Lado a lado */
-    align-items: center;        /* Alinhamento vertical centralizado */
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
-    gap: 40px;                  /* Espaço entre a imagem e o texto */
-    max-width: 900px;           /* Largura contida e elegante */
-    margin: 30px auto;          /* Margem superior/inferior limpa */
+    gap: 40px;
+    max-width: 900px;
+    margin: 30px auto;
     padding: 0 20px;
 }
 
 .sobre-foto {
-    flex: 0 0 280px;            /* Diminui e fixa a largura da foto em 280px */
+    flex: 0 0 280px;
     max-width: 280px;
     position: relative;
-    z-index: 2;                 /* Garante que a foto fique na frente durante a animação */
+    z-index: 2;
 }
 
 .sobre-foto img {
@@ -163,13 +261,13 @@ video {
 }
 
 .sobre-texto {
-    flex: 1;                    /* Ocupa o restante do espaço à direita */
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
     position: relative;
-    z-index: 1;                 /* Fica atrás da foto no início */
+    z-index: 1;
     animation: surgirDeTras 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
@@ -186,58 +284,20 @@ video {
     color: #52313d;
 }
 
-/* Animação: Texto surgindo de trás da foto */
 @keyframes surgirDeTras {
     0% {
         opacity: 0;
-        transform: translateX(-80px) scale(0.95); /* Começa recuado atrás da foto */
+        transform: translateX(-80px) scale(0.95);
     }
     100% {
         opacity: 1;
-        transform: translateX(0) scale(1); /* Posição final perfeita */
+        transform: translateX(0) scale(1);
     }
 }
 
 
 /* ==========================================
-   6. CONTEÚDO E GRADE DA GALERIA
-   ========================================== */
-
-.section {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 30px 20px;
-}
-
-.section h2 {
-    margin-bottom: 20px;
-    font-family: 'Times New Roman', serif;
-    color: #8f4058;
-}
-
-.grid-galeria {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.card-arte img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    border: 1px solid #f2e3e7;
-}
-
-.card-arte p {
-    margin-top: 8px;
-    font-size: 0.9rem;
-    color: #6d525c;
-}
-
-
-/* ==========================================
-   7. CARROSSEL PREMIUM (IDENTIDADE NATART)
+   6. CARROSSEL PREMIUM
    ========================================== */
 
 .galeria-section {
@@ -253,6 +313,7 @@ video {
     font-size: 2.2rem;
     color: #8f4058;
     margin-bottom: 20px;
+    font-family: 'Times New Roman', serif;
 }
 
 .carousel-container {
@@ -287,7 +348,7 @@ video {
     justify-content: center;
 }
 
-.carousel-slide img {
+.carousel-slide img {	
     max-width: 100%;
     max-height: 560px;
     object-fit: contain;
@@ -315,7 +376,6 @@ video {
     font-style: italic;
 }
 
-/* Setas em Tom Rosado em Vidro Fosco */
 .carousel-btn {
     position: absolute;
     top: 50%;
@@ -346,7 +406,6 @@ video {
 .carousel-btn.prev { left: 15px; }
 .carousel-btn.next { right: 15px; }
 
-/* Indicadores de Posição (Pills) */
 .carousel-dots {
     display: flex;
     justify-content: center;
@@ -370,47 +429,14 @@ video {
 }
 
 
-
 /* ==========================================
-   SEÇÃO 8 - CONTATO
+   7. CONTATO
    ========================================== */
 
-.hero {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #fcf0f3;
-    border-radius: 12px;
-    border: 1px solid #f4e1e6;
-    margin-bottom: 30px;
-}
-
-.hero h1 {
-    font-size: 2rem;
-    color: #8f4058;
-    margin-bottom: 15px;
-}
-
-.btn-hero {
-    display: inline-block;
-    padding: 12px 28px;
-    background-color: #8f4058;
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 6px;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease;
-}
-
-.btn-hero:hover {
-    background-color: #c86b85;
-}
-
-/* Estrutura da Página de Contato */
 .contato-container {
     display: flex;
     flex-direction: row;
-    align-items: center; /* Centraliza verticalmente a imagem com o formulário */
+    align-items: center;
     justify-content: space-between;
     gap: 50px;
     width: 100%;
@@ -419,7 +445,6 @@ video {
     padding: 0 20px;
 }
 
-/* Lado Esquerdo: Formulário com Caixas Maiores */
 .form-contato {
     flex: 1.2;
     width: 100%;
@@ -487,98 +512,115 @@ video {
     transform: translateY(-2px);
 }
 
-/* Lado Direito: Exibição da Imagem PNG sem fundo */
 .contato-info {
     flex: 1;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: transparent; /* Remove qualquer fundo de caixa */
-    box-shadow: none; /* Remove a sombra da caixa */
-    border: none;
 }
 
-.img-contato {
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-    background: transparent;
+.contato-info img {
+    max-width: 320px;
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    object-position: center 13%;
+    border-radius: 12px;
+    filter: brightness(1.05) contrast(0.95);
 }
 
 
 /* ==========================================
-   9. INSTAGRAM & RODAPÉ
+   8. RODAPÉ & INSTAGRAM
    ========================================== */
 
-.instagram-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
-}
-
-.instagram-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    color: #e1306c;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: bold;
-    padding: 8px 16px;
-    background-color: #fceef2;
-    border-radius: 20px;
-    transition: background-color 0.2s ease;
-}
-
-.instagram-link:hover {
-    background-color: #f8dde5;
-}
-
-.insta-icon {
-    width: 22px;
-    height: 22px;
-    stroke: #e1306c;
-}
-
-.footer {
+footer,
+.footer,
+.footer-principal {
     width: 100%;
     margin-top: auto;
-    padding: 30px 20px;
+    padding: 35px 20px 25px 20px;
     text-align: center;
     background-color: #3b232c;
     color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
 }
 
-.footer p {
-    margin: 5px 0;
+/* Botão Siga no Instagram */
+.btn-instagram {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #fceef2;
+    color: #d81b60;
+    padding: 10px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-instagram:hover {
+    background-color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.btn-instagram svg,
+.btn-instagram i {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+/* Texto de Direitos Autoriais */
+footer p,
+.footer p,
+.footer-principal p {
+    margin: 0;
     font-size: 0.85rem;
     color: #e8d7dd;
+    letter-spacing: 0.2px;
 }
 
 
 /* ==========================================
-   10. RESPONSIVIDADE (DISPOSITIVOS MÓVEIS)
+   9. RESPONSIVIDADE (DISPOSITIVOS MÓVEIS)
    ========================================== */
 
 @media (max-width: 768px) {
-    .header {
+    .header,
+    .header-principal {
         flex-direction: column;
-        gap: 8px;
-        padding: 8px 15px;
+        gap: 12px;
+        padding: 12px 15px;
     }
 
     .logo-subtitle {
         display: none;
     }
 
-    .nav-menu {
+    .nav-menu,
+    .menu-navegacao ul {
         gap: 12px;
     }
 
-    .nav-menu a {
+    .nav-menu a,
+    .menu-navegacao a {
         font-size: 14px;
+    }
+
+    .hero-principal {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 30px 20px;
     }
 
     .sobre-container {
