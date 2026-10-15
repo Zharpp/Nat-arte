@@ -1,31 +1,30 @@
 // ==========================================
 // 1. CONFIGURAÇÃO E DADOS DAS ARTES
 // ==========================================
-const TOTAL_FOTOS = 21;
+const TOTAL_FOTOS = 20;
 
 // Títulos e descrições personalizadas
 const ARTES_CUSTOMIZADAS = {
-    1: { titulo: 'Reunião de Pais e Mestres.', descricao: 'Lápis de cor e nanquim' },
-    2: { titulo: 'Arena Amazônia.', descricao: 'Cartaz ilustrado' },
-    3: { titulo: 'Espelho Espelho MEU.', descricao: 'Arte em nanquim sobre papel' },
-    4: { titulo: 'A Maternidade me Ensinou.', descricao: 'Arte em nanquim sobre papel' },
-    5: { titulo: 'Após a TEMPESTADE vem a CALMARIA', descricao: 'Arte em nanquim sobre papel' },
-    6: { titulo: 'Jamais chore pelo leite derramado', descricao: 'Arte em nanquim sobre papel' },
-    7: { titulo: 'O amor sempre FLORESCE.', descricao: 'Arte em nanquim sobre papel' },
-    8: { titulo: 'A primavera trouxe um presente', descricao: 'Arte em nanquim sobre papel' },
-    9: { titulo: 'Eu tenho um porto para chamar de MEU', descricao: 'Arte em nanquim sobre papel' },
-    10: { titulo: 'Chapelheiro Maluco', descricao: 'Arte em nanquim sobre papel' },
-    11: { titulo: 'A arte é você quem expressa.', descricao: 'Arte em nanquim sobre papel' },
-    12: { titulo: 'Até uma lagrima.', descricao: 'Arte em nanquim sobre papel' },
-    13: { titulo: 'Para tudo tem Solução.', descricao: 'Arte em nanquim sobre papel' },
-    14: { titulo: 'Sempre haverá um Porto Seguro', descricao: 'Arte em nanquim sobre papel' },
-    15: { titulo: 'Mamae Balboa', descricao: 'Arte em nanquim sobre papel' },
-    16: { titulo: '1min de ETERNIDADE', descricao: 'Arte em nanquim sobre papel' },
-    17: { titulo: 'Sempre Juntos', descricao: 'Arte em nanquim sobre papel' },
-    18: { titulo: 'Vai Passar', descricao: 'Arte em nanquim sobre papel' },
-    19: { titulo: 'Feliz dia das Mães', descricao: 'Arte em nanquim sobre papel' },
-    20: { titulo: 'Aos olhos do Pai', descricao: 'Arte em nanquim sobre papel' },
-    21: { titulo: 'God Gave Rock ad Roll to you', descricao: 'Arte em nanquim sobre papel' },
+    1: { titulo: 'Reunião de Pais - 2026. ',  descricao: 'Lápis de cor Aquarelavel sobre o papel. (22x13)' },
+    2: { titulo: 'Maternidade e o Florecer de outra Mulher - 2026.', descricao: 'Lápis de cor Aquarelavel sobre o papel. (22x13)' },
+    3: { titulo: 'Ser forte por mim - 2026.', descricao: 'Lápis de cor Aquarelavel sobre o papel. (22x13)' },
+    4: { titulo: 'Porto Seguro - 2026..', descricao: 'Lápis de cor Aquarelavel sobre o papel. (22x13)' },
+    5: { titulo: 'Tribulação - 2026.', descricao: 'Lápis de cor Aquarelavel sobre o papel. (22x13)' },
+    6: { titulo: 'Frustação - 2026. ', descricao: 'Lápis de cor Aquarelavel sobre o papel. (22x13)' },
+    7: { titulo: 'Pequeno e Fragíl. - 2026', descricao: 'Técnica Mista sobre o papel. (22x13)' },
+    8: { titulo: 'Florecendo no seu crescimento - 2026', descricao: 'Técnica Mista sobre o papel. (22x13)' },
+    9: { titulo: 'O abraço laranja - 2026', descricao: 'Tinta Guache. (20x21)' },
+    10: { titulo: 'A mente de uma puérpera - 2026', descricao: 'Técnica Mista. (21x15)' },
+    11: { titulo: 'Dar a Luz - 2026.', descricao: 'Giz pastel oleoso. (21x30)' },
+    12: { titulo: 'Meu maior medo - 2025.', descricao: 'Lápis de cor Aquarelavel.(21x30)' },
+    13: { titulo: 'Suportar - 2026.', descricao: 'Lápis de cor Aquarelavel.(21x30)' },
+    14: { titulo: 'Obrigado, meu filho - 2026', descricao: 'Lápis de cor Aquarelavel.(21x30)' },
+    15: { titulo: 'Mulher - 2025', descricao: 'Tinta Aquarela sobre o papel. (21x30)' },
+    16: { titulo: 'Blá blá blá - 2024', descricao: 'Tinta Aquarela sober o pape.(21x30)' },
+    17: { titulo: 'Confiança', descricao: 'Tinta Acrilica sobre a tela. (15x20' },
+    18: { titulo: 'Afeto é amamentar - 2026', descricao: 'Tinta Acrilica sobre papal paraná. (40x50)' },
+    19: { titulo: 'Dia das Mães - 2024', descricao: 'Arte digital. (21x30)' },
+	20: { titulo: 'Regar - 2026', descricao: 'Lápis de cor Aquarelavel. (22x13)' },
 };
 
 // Geração do array de obras
@@ -54,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentIndex = 0;
     let autoPlayTimer = null;
-    const TEMPO_TROCA = 5000; // 5 segundos
+    const TEMPO_TROCA = 10000; // 5 segundos
 
     // ==========================================
     // 3. RENDERIZAÇÃO E NAVEGAÇÃO
