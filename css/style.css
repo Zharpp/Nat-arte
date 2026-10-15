@@ -359,6 +359,7 @@ video {
 .slide-caption {
     margin-top: 18px;
     padding: 10px 15px;
+	text-align: center;
 }
 
 .slide-caption h3 {
